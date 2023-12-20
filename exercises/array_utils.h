@@ -19,7 +19,10 @@ void printTable(int **table, int n, int m);
  * with random integer values between 0 and 100 (exclusive).
  * This function assumes that the random number
  * generator has already been seeded.
+ * {
+ *}
  */
+
 int * generateRandomArray(int size);
 
 /**
