@@ -60,8 +60,14 @@ void freeTable(int **table, int n) {
   free(table);
 }
 
+//function find main number
 double getMean(const int *arr, int size) {
   //TODO: implement
+  // check the array address 
+  if(arr == NULL){
+    printf("Invalide address or no address of array\n");
+    return -1;
+  }
 }
 
 int getMin(const int *arr, int size) {
