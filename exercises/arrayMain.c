@@ -70,3 +70,25 @@ int main(int argc, char **argv) {
     for(int i = 0; i<resultSize; i++){
       printf("%d ",filterArray[i]);
     }
+       printf("\n");
+    // deallocate dynamic memory of this array
+    free(filterArray);
+  }
+  int r = 3;
+  int c = 5;
+  int **table2D = createMultiplicationTable(r, c);
+  printf("Table:\n");
+  if(table2D != NULL){
+    for(int i = 0; i<r; i++){
+      for(int j = 0; j<c; j++){
+        printf("%d ",table2D[i][j]);
+      }
+      printf("\n");
+    }
+  }
+
+  // deallocate a dynamic memory of this array
+  free(arr);
+
+  return 0;
+}
