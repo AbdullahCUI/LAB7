@@ -161,6 +161,35 @@ int getIndexOfMax(const int *arr, int size) {
 
 int * filterThreshold(const int *arr, int size, int threshold, int *resultSize) {
   //TODO: implement
+   // check validity
+  if(arr == NULL || resultSize == NULL){
+    printf("Invalide array....");
+    return NULL;
+  }
+  // variable count to store the increment value for the size of thresholdResult array/pointer;
+  int count = 0;
+  for(int i = 0; i<size; i++){
+    // condition which filter size for filterArray array
+    if(arr[i] >= threshold){
+      count++;
+    }
+  }
+  // The dynamic memory allocation for FilterArray 
+  int *filterArray = (int *)malloc(count * sizeof(int));
+  // index variable use to increment the dynamic array index/slot
+  int index = 0;
+  for(int i = 0; i<size; i++){
+    // Threshold as a boundry the value which equal or greater from threshold will filter from array in store in the 
+    // dynamic filterArray
+    if(arr[i]>=threshold){
+       filterArray[index++] = arr[i];
+    }
+    *resultSize = count;
+
+  }
+  // we will return the whole array/pointer to main
+  return filterArray;
+
 }
 
 int **createMultiplicationTable(int n, int m) {
