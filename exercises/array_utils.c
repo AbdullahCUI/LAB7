@@ -142,6 +142,21 @@ int getMax(const int *arr, int size) {
 
 int getIndexOfMax(const int *arr, int size) {
   //TODO: implement
+   if(arr == NULL){
+    printf("Invalide array...");
+    return -1;
+  }
+  int max = 0;
+  int maxIndex = 0;
+  for(int i = 0; i<size; i++){
+    if(arr[i] > max){
+      max = arr[i];
+      maxIndex = i;
+    }
+   
+  }
+  return maxIndex;
+
 }
 
 int * filterThreshold(const int *arr, int size, int threshold, int *resultSize) {
