@@ -45,3 +45,28 @@ int main(int argc, char **argv) {
     printf("The minimum as %d\n",min);
   }
 }
+ // Function to find minimum number index number
+  int minIndex = getIndexOfMin(arr, n);
+  if(minIndex != -1){
+    printf("The Index of Minimuim number as %d\n",minIndex);
+  }
+  int max = getMax(arr, n);
+  if(max!= -1){
+    printf("Max number in array %d\n",max);
+  }
+  int maxIndex = getIndexOfMax(arr, n);
+  if(maxIndex != -1){
+    printf("The max number index as %d\n",maxIndex);
+  }
+  // Limite/boundry
+  int threshold = 35;
+  // for dynamic memory array size 
+  int resultSize = 0;
+  // the ponter which store the dynamic array(filterArray from funtion address)
+  int *filterArray = filterThreshold(arr, n, threshold, &resultSize);
+  // Check valididty
+  if(filterArray != NULL){
+    printf("ThresholdResult: ");
+    for(int i = 0; i<resultSize; i++){
+      printf("%d ",filterArray[i]);
+    }
