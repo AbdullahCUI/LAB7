@@ -84,6 +84,23 @@ double getMean(const int *arr, int size) {
 
 int getMin(const int *arr, int size) {
   //TODO: implement
+    if(arr == NULL){
+    printf("Invalide address or no address of array\n");
+    return -1;
+  }
+  // check the size because we cannot find the Minimum of 1 element
+  if(size == 0){
+    printf("Invalide Size..\n");
+    return -1;
+  }
+  int min = arr[0];
+  for(int i = 0; i < size; i++){
+    if(arr[i] < min){
+      min = arr[i];
+    
+    }
+  }
+  return min;
 }
 
 int getIndexOfMin(const int *arr, int size) {
