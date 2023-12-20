@@ -175,6 +175,7 @@ int * filterThreshold(const int *arr, int size, int threshold, int *resultSize) 
     }
   }
   // The dynamic memory allocation for FilterArray 
+  //the function filter the number from array according the condition 
   int *filterArray = (int *)malloc(count * sizeof(int));
   // index variable use to increment the dynamic array index/slot
   int index = 0;
@@ -194,4 +195,35 @@ int * filterThreshold(const int *arr, int size, int threshold, int *resultSize) 
 
 int **createMultiplicationTable(int n, int m) {
   //TODO: implement
+   // check Validity
+  if(n == 0 || m == 0){
+    printf("Invalide inpute...\n");
+    return NULL;
+  }
+  // make the pointers array which store the address in row/pointer 
+  int **table = (int **)malloc(n * sizeof(int *));
+  // check validity
+  if(table == NULL){
+    printf("Invalide Memory allocation...\n");
+    return NULL;
+  }
+  for(int i = 0; i<n; i++){
+    // allocate memory for column for each row 
+    table[i] = (int *)malloc(m * sizeof(int));
+    // check validity
+    if(table[i] == NULL){
+      printf("Invalide memory Allocation for Column index...\n");
+    }
+      
+  }
+  // Multiplication of row and coloumn
+  for(int i = 0; i<n; i++){
+    for(int j = 0; j<m; j++){
+      table[i][j] = (i + 1) * (j + 1);
+    }
+  }
+  // Return the 2D array
+  return table;
+
+
 }
